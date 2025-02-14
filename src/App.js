@@ -10,17 +10,16 @@ function App() {
     const [optionsData, setOptionsData] = useState(null);
     const [subData, setSubData] = useState(null);
     const [FeatureData, setFeatureData] = useState(null); // or use []
-
     const [category, setCategory] = useState('');
     const [showButtons, setShowButtons] = useState(false);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+    
 
     // Function to fetch all data
     const fetchData = async () => {
         try {
             const categoryResponse = await fetch("http://localhost:8000/product_categories/get/");
             const categoryData = await categoryResponse.json();
-            console.log("category data", categoryData);
             setTempData(categoryData.data);
 
             const optionsResponse = await fetch("http://localhost:8000/product_options/get/");
@@ -33,7 +32,6 @@ function App() {
 
             const FeatureDataResponse = await fetch("http://localhost:8000/features_product/get/");
             const FeatureData = await FeatureDataResponse.json();
-            console.log("FeatureDatavghvccc",FeatureData.data)
             setFeatureData(FeatureData.data);
 
         } catch (error) {
@@ -54,49 +52,89 @@ function App() {
         setSelectedCategoryId(categoryId); // Update state with selected category ID
     };
 
-  
+    
     return (
         <div className="App">
+            <div className="navbar">
             <nav>
+            <div className="btn">
+                <button id="pricing" >Product</button>
+                <button id="pricing" >Indicators</button>
                 <button id="pricing" onClick={handlePricingClick}>Pricing</button>
+                <button id="pricing" >Contact Us</button>
+                <button id="pricing" >Blogs & Insights</button>
+                <button id="pricing">About Us</button>
+                </div>   
             </nav>
+            </div>
+            
+          
+           
 
-            {showButtons && (
-                <div id="buttonContainer">
-                    <button id="One" onClick={() => setCategory("Matrix ONE")}>Matrix ONE</button>
-                    <button id="EDGE" onClick={() => setCategory("Matrix EDGE")}>Matrix EDGE</button>
-                    <button id="ALGO" onClick={() => setCategory("Matrix ALGO")}>Matrix ALGO</button>
-                </div>
-            )}
+        {showButtons && (
 
-            <div className="main">
-                {category && (
-                    <>
+            <div className="buttonContainer">
+            {/* Heading */}
+            <h2 className="heading">Choose the Plan That Fits Your Trading Goals</h2>
+  
+            {/* Subheading */}
+            <div className="subheading">
+              <h5>Reach us 24*7</h5>
+              <h5>Mix plans</h5>
+              <h5>15-days free trial</h5>
+            </div>
+  
+            {/* Buttons */}
+            <div className="buttonChild">
+            <button id="One" onClick={() => setCategory("Matrix ONE")} >Matrix ONE</button>
+            <button id="EDGE" onClick={() => setCategory("Matrix EDGE")}>Matrix EDGE</button>
+            <button id="ALGO" onClick={() => setCategory("Matrix ALGO")}>Matrix ALGO</button>
+            </div>
+          </div>
+        )}
+
+        <div className="main">
+            {category && (
+        
+                <div className="maincategory">
                         {/* Passing handleCategorySelect as a prop */}
+                       
+                    <div className="feature_product">
+                    <h4>Featured Products</h4>
                         <FeaturedProducts 
                             category={category} 
                             tempData={tempData} 
                             handleCategorySelect={handleCategorySelect} 
                         />
+                    </div>
+
+                    <div className="StandardizedPlansMain">
+                    <h4>Personalized & Standardized Plans</h4>
                         <StandardizedPlans 
-                            category={selectedCategoryId}
+                            category={selectedCategoryId}   
                             optionsData={optionsData} 
                             handleCategorySelect={handleCategorySelect} 
                         />
-                        
+
+                    {/* <div className="FavouriteOneMain"> */}
+                    <h4 id="fav">Choose Your Favourite One</h4>
                         <FavouriteOne 
                             category={selectedCategoryId} 
                             subData={subData} 
                             handleCategorySelect={handleCategorySelect} // Passing the handleCategorySelect function
                         />
-
+                    {/* </div> */}
+                    <div className="FeaturePlan">
                         <FeaturePlan
                             category={selectedCategoryId}
-                            optionsData={FeatureData} 
+                            FeatureData={FeatureData} 
                             handleCategorySelect={handleCategorySelect} />
                         
-
-                    </>
+                    </div>
+                    </div>
+                    
+            
+                </div>
                 )}
             </div>
         </div>
