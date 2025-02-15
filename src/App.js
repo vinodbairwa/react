@@ -131,6 +131,8 @@ function App() {
                             handleCategorySelect={handleCategorySelect} />
                         
                     </div>
+                    <div>
+                    </div>
                     </div>
                     
             
