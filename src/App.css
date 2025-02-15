@@ -3,6 +3,7 @@
   padding: 0px;
   /* background-color: rgb(22, 19, 19); */
 }
+
 body {
   margin: 0;
   line-height: inherit;
@@ -17,6 +18,7 @@ body {
 
 body, .min-h-screen {
   overflow-x: hidden;
+ 
 }
 user agent stylesheet
 body {
@@ -25,22 +27,32 @@ body {
 }
 .navbar{
   background-color: black;
-  width: auto;
+  width: 100%;
   min-width: none;
   display: flex;
   justify-content: end;
   align-items: end;
   height: 8vh;
   min-height: auto;
+  white-space: normal;
+  word-wrap: break-word;
 }
 .btn{
-  width:80%;
-  height: 7vh;
-  min-width: 40%;
-  min-height: 7vh;
-  margin:1px 95px 6px 0px;
-  padding: 1px 1px 10px 100px;
+  width:82%;
+  height: 5vh;
+  min-width: 43%;
+  min-height: 5vh;
+  margin:1px 20px 10px 0px;
+  padding: 1px 1px 10px 110px;
+ 
 }
+#pricing{
+  margin: 1px 1x 1px 1px;
+  width: 16%;
+  height: 5vh;
+  padding: 1px 10px 1px 11px;
+}
+
 .heading{
   color: white;
   margin-top: 50px;
@@ -52,8 +64,31 @@ body {
    border: none;
    margin: 12px 1px 1px 1px;
    padding: 2px 1px 11px 25px;
+
+}
+nav{
+  display: flex;
+  justify-content: end;
+  align-items:center;
+}
+.navimg{
+  width: 15%;
+  height: 4vh;
+  min-height: 4vh;
+  min-width: 10%;
+  /* border: 2px solid red; */
+  margin: 3px 900px 0px 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.navimg img{
+  /* width: 00%; */
+  height: 3vh;
+ 
+  margin: 3px 99x 6px 1px;
+}
 
 
 .buttonChild button{
@@ -67,6 +102,14 @@ body {
  min-width: 21%;
  height: 4vh;
  min-height: 4vh;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+ /* white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis; */
+
 }
 
 .buttonChild{
@@ -83,16 +126,18 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  background-color:  #14171a;;
+  background-color:  #14171a;
+
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
 
 }
-.buttonChild button:hover {
-  background-color: #218838;
-}
 
-#One{
+
+/* #One{
   background-color: #218838;
-}
+} */
 
 /* ------------------- */
 
@@ -100,12 +145,13 @@ body {
 .buttonContainer {
   text-align: center;
   padding: 20px;
+
 }
 
 .heading {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .subheading {
@@ -205,14 +251,13 @@ body {
 
 }
 
-.price
-{
+.price{
   /* border: 2px solid rgb(241, 5, 5); */
   width: 30%;
-  height: 4vh;
-  margin-top: 15px;
+  /* height: 3vh; */
+  margin-top: 10px;
   font-weight: bold;
-  
+  /* font-size: 10px; */
 }
 
 
@@ -264,13 +309,12 @@ body {
   
 }
 
-.s1 .price{
+/* .s1 .price{
   width: 50%;
   height: 3vh;
-  /* border: 1px solid black; */
   font-size: 10px;
   
-}
+} */
 
 /* ------------------------------------------------------------------------ */
 

@@ -13,6 +13,7 @@ function App() {
     const [category, setCategory] = useState('');
     const [showButtons, setShowButtons] = useState(false);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+
     
 
     // Function to fetch all data
@@ -48,15 +49,19 @@ function App() {
 
     // Function to update category when a button is clicked
     const handleCategorySelect = (categoryId) => {
-        console.log("Selected Category ID:", categoryId);
+        // console.log("Selected Category ID:", categoryId);
         setSelectedCategoryId(categoryId); // Update state with selected category ID
     };
 
     
+
     return (
         <div className="App">
             <div className="navbar">
             <nav>
+            <div className="navimg">
+                <img src="/image/matrix-logo-00pF4n2q (2).svg"></img>
+            </div>
             <div className="btn">
                 <button id="pricing" >Product</button>
                 <button id="pricing" >Indicators</button>
@@ -65,15 +70,14 @@ function App() {
                 <button id="pricing" >Blogs & Insights</button>
                 <button id="pricing">About Us</button>
                 </div>   
+            
             </nav>
             </div>
             
-          
-           
 
         {showButtons && (
 
-            <div className="buttonContainer">
+        <div className="buttonContainer">
             {/* Heading */}
             <h2 className="heading">Choose the Plan That Fits Your Trading Goals</h2>
   
@@ -84,12 +88,32 @@ function App() {
               <h5>15-days free trial</h5>
             </div>
   
-            {/* Buttons */}
-            <div className="buttonChild">
-            <button id="One" onClick={() => setCategory("Matrix ONE")} >Matrix ONE</button>
-            <button id="EDGE" onClick={() => setCategory("Matrix EDGE")}>Matrix EDGE</button>
-            <button id="ALGO" onClick={() => setCategory("Matrix ALGO")}>Matrix ALGO</button>
-            </div>
+             <div className="buttonChild">
+        <button
+            id="One"
+            onClick={() => setCategory("Matrix ONE")}
+            style={{ backgroundColor: category === "Matrix ONE" ? "green" : "" }}
+        >
+            Matrix ONE
+        </button>
+
+        <button
+            id="EDGE"
+            onClick={() => setCategory("Matrix EDGE")}
+            style={{ backgroundColor: category === "Matrix EDGE" ? "green" : "" }}
+        >
+            Matrix EDGE
+        </button>
+
+        <button
+            id="ALGO"
+            onClick={() => setCategory("Matrix ALGO")}
+            style={{ backgroundColor: category === "Matrix ALGO" ? "green" : "" }}
+        >
+            Matrix ALGO
+        </button>
+        </div>
+
           </div>
         )}
 
@@ -131,8 +155,7 @@ function App() {
                             handleCategorySelect={handleCategorySelect} />
                         
                     </div>
-                    <div>jnfjdfbfbfnbgnfbgnfgndfdjjdbdf
-                    </div>
+             
                     </div>
                     
             

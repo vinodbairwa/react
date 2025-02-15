@@ -69,7 +69,7 @@
 import React, { useEffect, useState } from 'react';
 
 function FeaturePlan({ category, FeatureData, handleCategorySelect }) {
-    console.log("filtereddddddd", FeatureData);
+    // console.log("filtereddddddd", FeatureData);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
@@ -81,7 +81,7 @@ function FeaturePlan({ category, FeatureData, handleCategorySelect }) {
         }
     }, [category, FeatureData]);
 
-    console.log("filteredDatazxxzxzxzxzxas", filteredData);
+    // console.log("filteredDatazxxzxzxzxzxas", filteredData);
     
     return (
         <div className="FeaturePlanclass">
@@ -92,7 +92,7 @@ function FeaturePlan({ category, FeatureData, handleCategorySelect }) {
                         <button className="mainfeatures" data-id={item.id} 
                             onClick={() => handleCategorySelect(item.id)}>
                             <div className="title"><img 
-                                src="/download.svg" 
+                                src="/image/download.svg" 
                                 alt="icon" 
                                 className="feature-icon"
                             />{item.title}</div>

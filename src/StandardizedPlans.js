@@ -31,6 +31,7 @@ import React, { useEffect, useState } from 'react';
 
 function StandardizedPlans({ category, optionsData, handleCategorySelect }) {
     const [filteredData, setFilteredData] = useState([]);
+    // console.log("StandardizedPlans","categoryId",category," optionsData", optionsData,"handleCategorySelect ",handleCategorySelect )
 
     useEffect(() => {
         if (optionsData) {
